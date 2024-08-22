@@ -15,7 +15,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonBackReference
+    @JsonBackReference //when returning JSON to avoid recursion
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

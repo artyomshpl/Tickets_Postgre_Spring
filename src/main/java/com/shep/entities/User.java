@@ -17,7 +17,7 @@ public class User {
     private String username;
     private String status;
 
-    @JsonManagedReference
+    @JsonManagedReference //when returning JSON to avoid recursion
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Ticket> tickets = new ArrayList<>();
 }
